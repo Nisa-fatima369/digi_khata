@@ -1,6 +1,8 @@
 import 'package:digi_khata/screens/home.dart';
 import 'package:digi_khata/screens/money.dart';
-import 'package:digi_khata/screens/more.dart';
+import 'package:digi_khata/screens/more/business_detail.dart';
+import 'package:digi_khata/screens/more/more.dart';
+import 'package:digi_khata/screens/more/notifications.dart';
 import 'package:digi_khata/screens/otp_screen.dart';
 import 'package:digi_khata/screens/page_view.dart';
 import 'package:digi_khata/screens/phone_screen.dart';
@@ -17,8 +19,8 @@ class Routes {
   static const String home = 'home';
   static const String money = 'money';
   static const String more = 'more';
-  // static const String  = '';
-  // static const String  = '';
+  static const String businessDetail = 'businessDetail';
+  static const String notifications = 'notifications';
   // static const String  = '';
   // static const String  = '';
   // static const String  = '';
@@ -45,8 +47,12 @@ class Routes {
         return MaterialPageRoute(builder: (context) => const Money());
       case more:
         return MaterialPageRoute(builder: (context) => const More());
+      case businessDetail:
+        return MaterialPageRoute(builder: (context) => const BusinessDetail());
+      case notifications:
+        return MaterialPageRoute(builder: (context) => const Notifications());
       default:
-        return MaterialPageRoute(builder: (context) => PageVieew ());
+        return MaterialPageRoute(builder: (context) => const PageVieew ());
     }
   }
 }

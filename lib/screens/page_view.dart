@@ -1,6 +1,6 @@
 import 'package:digi_khata/screens/home.dart';
 import 'package:digi_khata/screens/money.dart';
-import 'package:digi_khata/screens/more.dart';
+import 'package:digi_khata/screens/more/more.dart';
 import 'package:digi_khata/theme/colors.dart';
 import 'package:flutter/material.dart';
 

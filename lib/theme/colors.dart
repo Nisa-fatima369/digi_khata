@@ -11,11 +11,13 @@ class AppColors {
   static const lightGreen = Color(0XFFE3FCEF);
   static const success = Color(0XFF00AC41);
   static const failure = Color(0XFFC53532);
-  static const warning = Color(0XFFFF8C00);
+  // static const warning = Color.fromARGB(255, 243, 146, 27);
   static const primary = Color.fromARGB(255, 247, 126, 56);
-  static const primaryGradient = Color(0XFFDFAA54);
+  static const primaryGradient = Color.fromARGB(255, 224, 90, 49);
+  static const primaryVarient = Color.fromARGB(255, 243, 146, 27);
   static const extraColor = Color(0XFFA10035);
   static const background = Color(0XFFFFFFFF);
+  static const background2 = Color.fromARGB(255, 243, 240, 240);
   static const border = Color(0XFFDFE1E6);
   static const primaryText = Color(0XFF0F0F0F);
   static const disabled = Color(0XFFCCCCCC);

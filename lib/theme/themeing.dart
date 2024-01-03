@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 String robotoFontFamily = "Roboto";
 
 ThemeData themeData = ThemeData(
-  scaffoldBackgroundColor: AppColors.background,
+  scaffoldBackgroundColor: AppColors.background2,
   fontFamily: robotoFontFamily,
   visualDensity: VisualDensity.adaptivePlatformDensity,
   colorScheme: ColorScheme.fromSwatch().copyWith(
@@ -19,7 +19,7 @@ ThemeData themeData = ThemeData(
     titleTextStyle: TextStyle(
       color: AppColors.background,
       fontSize: 24,
-      fontWeight: FontWeight.w700,
+      fontWeight: FontWeight.w500,
     ),
     elevation: 0,
   ),

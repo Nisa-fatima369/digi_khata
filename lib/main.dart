@@ -1,8 +1,16 @@
 import 'package:digi_khata/config/routes.dart';
+import 'package:digi_khata/theme/colors.dart';
 import 'package:digi_khata/theme/themeing.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: AppColors.primary,
+    // statusBarIconBrightness: Brightness.dark,
+    // systemNavigationBarColor: Colors.white,
+    // systemNavigationBarIconBrightness: Brightness.dark,
+  ));
   runApp(const DigiKhata());
 }
 

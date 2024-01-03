@@ -27,7 +27,7 @@ class _PinLockState extends State<PinLock> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               y40,
-              Icon(Icons.lock_outline, size: 80, color: AppColors.primary),
+              const Icon(Icons.lock_outline, size: 80, color: AppColors.primary),
               y15,
               Text(
                 'DigiKhata Locked',
@@ -87,3 +87,6 @@ class _PinLockState extends State<PinLock> {
     );
   }
 }
+
+
+// https://pub.dev/packages/flutter_screen_lock

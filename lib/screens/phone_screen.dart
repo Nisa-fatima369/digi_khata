@@ -171,7 +171,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
                       : const Text('Login'),
                 ),
               ),
-            ],
+            ]
           ),
         ),
       ),

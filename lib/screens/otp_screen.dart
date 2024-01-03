@@ -17,7 +17,6 @@ class _OtpState extends State<Otp> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     int? _resendToken;
 
     // void resendOTP(String phoneNumber) async {
