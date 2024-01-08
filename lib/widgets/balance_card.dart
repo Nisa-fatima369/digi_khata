@@ -1,3 +1,4 @@
+import 'package:digi_khata/screens/home_tabs/all_transactions.dart';
 import 'package:digi_khata/theme/colors.dart';
 import 'package:digi_khata/widgets/basic_card.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,6 @@ class BalanceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BasicCard(
-      onTap: () {},
       child: Padding(
         padding: const EdgeInsets.only(left: 12.0, top: 12.0),
         child: Column(
@@ -79,7 +79,12 @@ class BalanceCard extends StatelessWidget {
                   Expanded(
                     flex: 1,
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const AllTransations()));
+                      },
                       child: const Icon(Icons.arrow_forward_ios,
                           color: AppColors.primary),
                     ),

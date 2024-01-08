@@ -5,10 +5,12 @@ import 'package:flutter/material.dart';
 class BasicCard extends StatelessWidget {
   final Widget? child;
   final Function()? onTap;
+  final IconData? icon;
+  final String? title;
   const BasicCard({
     Key? key,
     this.child,
-    this.onTap,
+    this.onTap,  this.icon,   this.title,
   }) : super(key: key);
 
   @override

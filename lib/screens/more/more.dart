@@ -1,7 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:digi_khata/config/routes.dart';
+import 'package:digi_khata/screens/nestedPageView/nested_page_view.dart';
+import 'package:digi_khata/screens/user_authentication/sign_in.dart';
 import 'package:digi_khata/widgets/basic_button.dart';
 import 'package:digi_khata/widgets/basic_card.dart';
+import 'package:digi_khata/widgets/utils.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:digi_khata/constants.dart';
@@ -126,14 +130,100 @@ class More extends StatelessWidget {
                     child: BasicCard(
                       child: ListTile(
                         title: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            FontAwesomeIcons.users,
-                            color: AppColors.primary,
-                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const NestedPageView(
+                                  nestedPageIndex: 0,
+                                ),
+                              ),
+                            );
+                          },
+                          icon: containerData[0]['icon'],
+                          color: AppColors.primary,
                         ),
                         subtitle: Text(
-                          'Staff Book',
+                          containerData[0]['title'],
+                          style: Theme.of(context).textTheme.bodySmall,
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ),
+                  x5,
+                  Expanded(
+                    child: BasicCard(
+                      child: ListTile(
+                        title: IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const NestedPageView(nestedPageIndex: 1),
+                              ),
+                            );
+                          },
+                          icon: containerData[1]['icon'],
+                          color: AppColors.primary,
+                        ),
+                        subtitle: Text(
+                          containerData[1]['title'],
+                          style: Theme.of(context).textTheme.bodySmall,
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ),
+                  x5,
+                  Expanded(
+                    child: BasicCard(
+                      child: ListTile(
+                        title: IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const NestedPageView(nestedPageIndex: 2),
+                              ),
+                            );
+                          },
+                          icon: containerData[2]['icon'],
+                          color: AppColors.primary,
+                        ),
+                        subtitle: Text(
+                          containerData[2]['title'],
+                          style: Theme.of(context).textTheme.bodySmall,
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              y10,
+              Row(
+                children: [
+                  Expanded(
+                    child: BasicCard(
+                      child: ListTile(
+                        title: IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const NestedPageView(nestedPageIndex: 3),
+                              ),
+                            );
+                          },
+                          icon: containerData[3]['icon'],
+                          color: AppColors.primary,
+                        ),
+                        subtitle: Text(
+                          containerData[3]['title'],
                           style: Theme.of(context).textTheme.bodySmall,
                           textAlign: TextAlign.center,
                         ),
@@ -168,63 +258,6 @@ class More extends StatelessWidget {
                         ),
                         subtitle: Text(
                           'Calculator',
-                          style: Theme.of(context).textTheme.bodySmall,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              y10,
-              Row(
-                children: [
-                  Expanded(
-                    child: BasicCard(
-                      child: ListTile(
-                        title: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            FontAwesomeIcons.book,
-                            color: AppColors.primary,
-                          ),
-                        ),
-                        subtitle: Text(
-                          'Cash Book',
-                          style: Theme.of(context).textTheme.bodySmall,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                  ),
-                  x5,
-                  Expanded(
-                    child: BasicCard(
-                      child: ListTile(
-                        title: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(FontAwesomeIcons.cashRegister,
-                              color: AppColors.primary),
-                        ),
-                        subtitle: Text(
-                          'Stock Book',
-                          style: Theme.of(context).textTheme.bodySmall,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                  ),
-                  x5,
-                  Expanded(
-                    child: BasicCard(
-                      child: ListTile(
-                        title: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(FontAwesomeIcons.moneyBill,
-                              color: AppColors.primary),
-                        ),
-                        subtitle: Text(
-                          'Bill Book',
                           style: Theme.of(context).textTheme.bodySmall,
                           textAlign: TextAlign.center,
                         ),
@@ -298,7 +331,14 @@ class More extends StatelessWidget {
                     ),
                     const Divider(color: AppColors.grey),
                     ListTile(
-                      onTap: () {},
+                      onTap: () async {
+                        await FirebaseAuth.instance.signOut();
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LoginScreen()),
+                        );
+                      },
                       leading: const Icon(
                         Icons.logout,
                         color: AppColors.primary,
@@ -309,18 +349,12 @@ class More extends StatelessWidget {
                 ),
               ),
               y40,
-              Text(
-                'Version 1.0.0',
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-              Text(
-                'Made in Pakistan',
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-              Text(
-                'Developed by:',
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
+              Text('Version 1.0.0',
+                  style: Theme.of(context).textTheme.bodySmall),
+              Text('Made in Pakistan',
+                  style: Theme.of(context).textTheme.bodySmall),
+              Text('Developed by:',
+                  style: Theme.of(context).textTheme.bodySmall),
               Text(
                 'Nisa Fatima',
                 style: Theme.of(context)
@@ -335,4 +369,3 @@ class More extends StatelessWidget {
     );
   }
 }
-

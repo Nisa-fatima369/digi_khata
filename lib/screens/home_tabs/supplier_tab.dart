@@ -1,9 +1,10 @@
 import 'package:digi_khata/constants.dart';
+import 'package:digi_khata/screens/nestedPageView/nested_page_view.dart';
 import 'package:digi_khata/theme/colors.dart';
 import 'package:digi_khata/widgets/balance_card.dart';
 import 'package:digi_khata/widgets/basic_card.dart';
+import 'package:digi_khata/widgets/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 Widget supplierTab(BuildContext context) {
     return Padding(
@@ -13,116 +14,43 @@ Widget supplierTab(BuildContext context) {
         children: [
           const BalanceCard(),
           y10,
-          Row(
-            children: [
+         Row(
+          children: [
+            for(int index = 0; index < containerData.length; index++)
               Expanded(
-                child: BasicCard(
-                  child: ListTile(
-                    title: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        FontAwesomeIcons.book,
-                        color: AppColors.primaryVarient,
+                child: Container(
+                  padding: const EdgeInsets.all(3.0),
+                  child: BasicCard(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              NestedPageView(nestedPageIndex: index),
+                        ),
+                      );
+                    },
+                    child: ListTile(
+                      title: IconButton(
+                        onPressed: () {},
+                        icon: containerData[index]['icon'],
+                        color: AppColors.primary,
+                      ),
+                      subtitle: Text(
+                        containerData[index]['title'],
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodySmall!
+                            .copyWith(fontSize: 10),
+                        textAlign: TextAlign.center,
                       ),
                     ),
-                    subtitle: Text(
-                      'Cash Book',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodySmall!
-                          .copyWith(fontSize: 10),
-                      textAlign: TextAlign.center,
-                    ),
                   ),
                 ),
               ),
-              x5,
-              Expanded(
-                child: BasicCard(
-                  child: ListTile(
-                    title: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(FontAwesomeIcons.cashRegister,
-                          color: AppColors.primaryVarient),
-                    ),
-                    subtitle: Text(
-                      'Stock Book',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodySmall!
-                          .copyWith(fontSize: 10),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-              ),
-              x5,
-              Expanded(
-                child: BasicCard(
-                  child: ListTile(
-                    title: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(FontAwesomeIcons.moneyBill,
-                          color: AppColors.primaryVarient),
-                    ),
-                    subtitle: Text(
-                      'Bill  Book',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodySmall!
-                          .copyWith(fontSize: 10),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-              ),
-              x5,
-              Expanded(
-                child: BasicCard(
-                  child: ListTile(
-                    title: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        FontAwesomeIcons.users,
-                        color: AppColors.primaryVarient,
-                      ),
-                    ),
-                    subtitle: Text(
-                      'Staff Book',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodySmall!
-                          .copyWith(fontSize: 10),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-              ),
-              x5,
-              Expanded(
-                child: BasicCard(
-                  child: ListTile(
-                    title: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        FontAwesomeIcons.recycle,
-                        color: AppColors.primaryVarient,
-                      ),
-                    ),
-                    subtitle: Text(
-                      'Recycle Bin',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodySmall!
-                          .copyWith(fontSize: 10),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          y100,
+          ],
+        ),
+        y100,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

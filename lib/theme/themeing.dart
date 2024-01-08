@@ -44,7 +44,7 @@ ThemeData themeData = ThemeData(
     ),
     bodyLarge: TextStyle(
       color: AppColors.primaryText,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w600,
       fontSize: 18,
     ),
     bodyMedium: TextStyle(

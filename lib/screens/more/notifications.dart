@@ -27,7 +27,7 @@ class Notifications extends StatelessWidget {
                 ),
             unselectedLabelStyle:
                 Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: AppColors.background,
+                      color: AppColors.background.withOpacity(0.5),
                     ),
             tabs: const [
               Tab(text: 'Entry'),

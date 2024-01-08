@@ -1,44 +1,43 @@
 import 'package:digi_khata/theme/colors.dart';
-import'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 final kSimpleTextField = InputDecoration(
-        hintText: '',
-        hintStyle: TextStyle(
-      color: AppColors.primaryText,
-      fontWeight: FontWeight.w500,
-      fontSize: 16,
+  hintText: '',
+  hintStyle: const TextStyle(
+    color: AppColors.primaryText,
+    fontWeight: FontWeight.w500,
+    fontSize: 16,
+  ),
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(15),
+    borderSide: const BorderSide(
+      color: AppColors.border,
     ),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
-          borderSide: const BorderSide(
-            color: AppColors.border,
-          ),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
-          borderSide: const BorderSide(
-            color: AppColors.border,
-          ),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
-          borderSide: const BorderSide(
-            color: AppColors.border,
-          ),
-        ),
-        errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
-          borderSide: const BorderSide(
-            color: AppColors.failure,
-          ),
-        ),
-        filled: true,
-        fillColor: AppColors.background.withOpacity(0.2),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-        focusColor: AppColors.background.withOpacity(0.2),
-        hoverColor: AppColors.background.withOpacity(0.2),
-        
-      );
+  ),
+  enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(15),
+    borderSide: const BorderSide(
+      color: AppColors.border,
+    ),
+  ),
+  focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(15),
+    borderSide: const BorderSide(
+      color: AppColors.border,
+    ),
+  ),
+  errorBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(15),
+    borderSide: const BorderSide(
+      color: AppColors.failure,
+    ),
+  ),
+  filled: true,
+  fillColor: AppColors.background.withOpacity(0.2),
+  contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+  focusColor: AppColors.background.withOpacity(0.2),
+  hoverColor: AppColors.background.withOpacity(0.2),
+);
 
 //Search TextField
 final kSearchTextField = InputDecoration(
@@ -90,8 +89,9 @@ const y150 = SizedBox(height: 150);
 const y200 = SizedBox(height: 200);
 const y300 = SizedBox(height: 300);
 
-
 const x5 = SizedBox(width: 5);
 const x10 = SizedBox(width: 10);
 const x15 = SizedBox(width: 15);
 const x20 = SizedBox(width: 20);
+const x150 = SizedBox(width: 150);
+const x300 = SizedBox(width: 300);

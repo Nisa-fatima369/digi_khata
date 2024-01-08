@@ -1,4 +1,7 @@
+import 'package:digi_khata/config/routes.dart';
 import 'package:digi_khata/constants.dart';
+import 'package:digi_khata/screens/home_tabs/collection.dart';
+import 'package:digi_khata/screens/home_tabs/add_customer.dart';
 import 'package:digi_khata/screens/home_tabs/bank_tab.dart';
 import 'package:digi_khata/screens/home_tabs/customers_tab.dart';
 import 'package:digi_khata/screens/home_tabs/supplier_tab.dart';
@@ -15,7 +18,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _currentIndex = 0;
   bool floatText = false;
   bool isBank = false;
   @override
@@ -70,7 +72,9 @@ class _HomeState extends State<Home> {
           ),
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.collection);
+              },
               icon: const Icon(Icons.add_business),
             ),
           ],
@@ -94,7 +98,7 @@ class _HomeState extends State<Home> {
         ),
         body: TabBarView(
           children: [
-            customerANDAllTab(context),
+            customerANDAllTab(context ),
             supplierTab(context),
             bankTab(context),
             customerANDAllTab(context),
@@ -104,11 +108,20 @@ class _HomeState extends State<Home> {
           backgroundColor: floatText == supplierTab(context)
               ? AppColors.success
               : AppColors.primaryGradient,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return const AddCustomer();
+                    }),
+                  );
+          },
           label: Row(
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  
+                },
                 icon: isBank == bankTab(context)
                     ? const Icon(FontAwesomeIcons.building)
                     : const Icon(Icons.person_add),

@@ -1,5 +1,7 @@
+import 'package:digi_khata/config/routes.dart';
 import 'package:digi_khata/constants.dart';
 import 'package:digi_khata/theme/colors.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -10,25 +12,25 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   Future.delayed(
-  //     const Duration(seconds: 3),
-  //     () {
-  //       navigate();
-  //     },
-  //   );
-  // }
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(
+      const Duration(seconds: 3),
+      () {
+        navigate();
+      },
+    );
+  }
 
-  // void navigate() async {
-  //   final isLoggedIn = FirebaseAuth.instance.currentUser != null;
-  //   if (isLoggedIn) {
-  //     Navigator.pushReplacementNamed(context, Routes.pageView);
-  //   } else {
-  //     Navigator.pushReplacementNamed(context, Routes.signupScreen);
-  //   }
-  // }
+  void navigate() async {
+    final isLoggedIn = FirebaseAuth.instance.currentUser != null;
+    if (isLoggedIn) {
+      Navigator.pushReplacementNamed(context, Routes.pagevieew);
+    } else {
+      Navigator.pushReplacementNamed(context, Routes.signUp);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
