@@ -15,6 +15,12 @@ flutter run
  
 ## 📱 Screen Shots
 
+<img src="https://github.com/user-attachments/assets/d901f9a0-b58f-42c4-9653-8db37a88da72" width=180> <img src="https://github.com/user-attachments/assets/9e3bb0dd-ecba-4227-9484-c73db2e00d2d" width=180> <img src="https://github.com/user-attachments/assets/24d06054-33d9-4df4-89ac-7c3ce635afda" width=180> <img src="https://github.com/user-attachments/assets/eabcaf0d-7301-43f6-860e-c2bf8b23186b" width=180>
+
+<img src="https://github.com/user-attachments/assets/7c165246-90c6-445c-8165-a9a3656caa2c" width=180> <img src="https://github.com/user-attachments/assets/544f04de-f46c-4800-a734-eea04083b66b" width=180> <img src="https://github.com/user-attachments/assets/f6003651-7c9e-4085-af8b-3a1d2ed7032b" width=180> <img src="https://github.com/user-attachments/assets/77328d10-b650-4b5b-9955-d180190989cc" width=180> 
+
+<img src="https://github.com/user-attachments/assets/467b37b1-cea5-447e-9fdc-8b4f6b02a2f5" width=180> <img src="https://github.com/user-attachments/assets/5adf216c-dda5-4a3b-af49-33431b2452b4" width=180> <img src="https://github.com/user-attachments/assets/af637ff0-476a-49ee-96b2-18d97c50f924" width=180> <img src="https://github.com/user-attachments/assets/70d9b70c-5601-4665-a5ee-8bc2e9a02c76" width=180>
+
 ## 🎨 Inspiration
 
 https://play.google.com/store/apps/details?id=com.androidapp.digikhata
